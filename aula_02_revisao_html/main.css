@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+    /* em define o tamanho com base no "pai dele no body" */
+    /* rem é root + em */
+}
+header, footer{ 
+     /*a vírgula é para formatar ambos  */
+     background-color: brown;
+     text-align: center;
+     padding: 2rem;
+}
+nav ol{
+    /* display flex é no OL porque é o "pai" dos elementos, ou seja, o container */
+    display: flex;
+    justify-content: center;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+nav a{
+    background-color: rgb( 235, 134, 134);
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem;
+    display: block;
+    /* a marcação de âncora tem o comportamento inline, isto é, o padding
+    e o width não funcionam corretamente. Então, é necessário colocar
+    o display: inline-block, que permitirá um comportamento híbrido.
+    A estratégia de usar esse formatação é a usabilidade, tornando toda a 
+    a área do botão clicável */
+}
+nav li{
+    list-style-type: none;
+}
+nav li a:hover{
+    /* hover é uma subclasse do css para o efeito de passar o cursor do mouse */
+    background-color: whitesmoke;
+}
+main{
+    max-width: 70rem;
+    /* define uma largura máxima */
+    margin: 0 auto;
+    /* coloca o bloco no centro, auto de automatico */
+    /* para colocar um bloco no centro, pode usar width com margin ou display flex com justify-content */
+    display: flex;
+    flex-wrap: wrap
+}
+section{
+    width: 27rem;
+    border: 1px solid black; 
+    padding: 1rem;
+    margin: 1rem;
+}
