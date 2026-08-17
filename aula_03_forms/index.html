@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE ESTÁGIO</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>DIRETORIA DE EXTENSÃO - DIREX</h1>
+    <h2>CADASTRO PARA ESTÁGIO</h2>
+    <form action="resposta.html" method="get">
+        <!-- método get os dados ficam no url e no post os dados vão escondidos -->
+        <label for="nome">Nome: </label>
+        <!-- a marcação de label representa o rótulo do campo do formulário, é importante para a acessibilidade 
+         a marcação precisa ficar relacionada com o componente de entrada de dados. o componente, por exemplo, input, pode ficar dentro da marcação ou relacionada com o atributo for da label e id do componente de entrada de dados
+         -->
+        <input type="text" id="nome" name="nome" value="Abraão Vital"><br>
+        <!-- o atributo value é usado para editar dados de um formulário, pois eles já estão preenchidos e ficam disponíveis para o usuário mudar -->
+
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail aqui..."><br>
+        <!-- placeholder é um atributo de rótulo  -->
+
+        <label for="nascimento">Data de Nascimento: </label>
+        <input type="date" id="nascimento" disabled>
+        <!-- disabled é um comando para desativar um negócio, então não da pra usar -->
+        <br>
+                
+        <label for="curriculo">Currículo: </label>
+        <input type="file" id="curriculo" required> <br>
+        <!-- required é um comando  que torna o campo obrigatório -->
+
+        <label for="senha">Senha: </label>
+        <input type="password" id="senha" maxlength="7" minlength="3">
+        <!-- max e min definem limites de caracteres -->
+        <br>
+
+        <label for="uf">Estado: </label>
+        <!-- select é chamado de combobox -->
+         <select name="uf" id="uf">
+            <!-- o componente select é usado para grupo de itens muito similares
+             o atributo 'multiple' permite selecionar vários -->
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="pe" selected>Pernambuco</option>
+            <!-- o comando 'selected' deixa o item ativo-->
+            <option value="pb">Paraíba</option>
+         </select> <br>
+
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+</html>
