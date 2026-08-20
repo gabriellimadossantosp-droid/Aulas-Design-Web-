@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NÃO LEMBRO O NOME QUE ERA PRA COLOCAR    </title>
+    <title>CADASTRO DE CURRÍCULO</title>
 </head>
 <body>
     <form action="">
@@ -31,6 +31,7 @@
             Qual seu curso: <br>
             <label>
                 <input type="radio" name="curso" value="infoweb">
+                <!-- assim como no checkbox, o radio também tem que colocar value e name -->
                 INFOWEB
             </label> <br>
             <label>
@@ -42,8 +43,44 @@
                 Manutenção e Suporte
             </label> <br>
         </p>
-        <input type="submit" value="ENVIAR">
+        <fieldset>
+            <!-- fieldset é um componente totalmente opcional usado para organizar o formulário visualmente -->
+            <legend>MENSAGEM</legend>
+            <label for="mensagem">
+                Mensagem: <br>
+                <textarea name="msn" id="mensagem" cols="30" rows="10"></textarea>
+                <!-- essa marcação tem abertura e fechamento porque permite um texto longo com enters
+                 cols e rows são permitidos mesmo sendo de formatação
+                 difere d =o input do tipo text porque aceita texto longo
+                 value é o texto dentro da marcação 
+                cols equivale a coluna/ largura
+                    rows equivale a /altura -->
+            </label>
+        </fieldset>
 
+        <label for="idade">
+            Idade:
+            <input type="number" id="idade" min="1" max="130">
+        </label> <br>
+
+        <label for="cidade">
+            Cidade:
+            <input type="text" id="list-cidade">
+        </label>
+
+        <datalist id="cidade">
+            <!-- datalist é um componente novo, similar ao combox (select)
+             se relaciona com o input com o atributo 'list' 
+             permite que o usuário digite e selecione uma opção-->
+            <option value="Recife">
+            <option value="Natal">
+            <option value="João Pessoa">
+            <option value="Fortaleza">
+        </datalist>
+
+        <input type="hidden" id="id-user" value="5487">
+
+        <input type="submit" value="ENVIAR" disabled>
 
     </form>
 </body>
