@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NÃO LEMBRO O NOME QUE ERA PRA COLOCAR    </title>
+</head>
+<body>
+    <form action="">
+        <label for="nome">Nome: </label>
+        <input type="text" id="none" required>
+
+        <p>Qual sua área? <br>
+        <!-- não é necessário colocar o input na label se ele estiver dentro dela
+         o atributo de name representa o grupo
+         o atributo de value precisa ser definido e recebe o valor (é como se fosse o valor digitado em um campo de texto) -->
+        <label>
+            <input type="checkbox" name="area" id="design" value="design">
+            Design
+        </label> <br>
+        <label>
+            <input type="checkbox" name="area" id="prog" value="prog">
+            Programação
+        </label> <br>
+        <label>
+            <input type="checkbox" name="area" id="redes" value="redes">
+            Redes 
+        </label>
+        </p>
+        <p>
+            Qual seu curso: <br>
+            <label>
+                <input type="radio" name="curso" value="infoweb">
+                INFOWEB
+            </label> <br>
+            <label>
+                <input type="radio" name="curso" value="adm">
+                ADM
+            </label> <br>
+            <label>
+                <input type="radio" name="curso" value="msi">
+                Manutenção e Suporte
+            </label> <br>
+        </p>
+        <input type="submit" value="ENVIAR">
+
+
+    </form>
+</body>
+</html>
