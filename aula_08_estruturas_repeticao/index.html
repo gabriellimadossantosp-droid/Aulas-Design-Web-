@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTRUTURAS DE REPETIÇÃO</title>
+</head>
+<body>
+    <h1>ESTRUTURAS DE REPETIÇÃO</h1>
+      <P id="texto"></P>
+      <ol id="listadealunos"></ol>
+      <script>
+        const alunos = ['Carlos', 'Alcides', 'Bianca', 'Danúbia'];
+        // variável da lista alunos
+        document.getElementById("texto").innerHTML = alunos.sort().join(" - ");
+        // imprimir chamando 2 métodos para lista: sort que é para ordenar e join
+        // insere um caractere entre cada um deles
+
+        // for
+        for(let i=0 ; i<10 ; i++){
+            //A estrutura de repetição 'for' recebe 3 parâmetros:
+            //1 parâmetro: declaração/início
+            //2 parâmetro: teste lógico
+            //3 parâmetro: incremento
+            //++i é igual ao i+=1
+            console.log(i);
+        }
+        for(let d=0 ; d<10 ; d+=2){
+            console.log("Incremento de 2 em 2: "+d+"/n");
+            //'/n' é um tipo de br para o console log
+            //'+' concatena a string (valor estático) com variavel
+        }
+        for(let i=10 ; i>0 ; i--){
+            console.log("Decremento: "+1);
+        }
+        //foreach
+        alunos.forEach(item => {
+            //foreeach é uma opção prática para imprimir os valores de uma lista
+            //não é necessário incrementar e nem fazer teste lógico com o comprimento da lista
+            //'item' é uma variável criada internamente para representar cada item da lista
+            console.log(item)
+        })
+        for(let i=0 ; i<3 ; i++){
+            console.log(alunos[i]);
+            document.getElementById("listadealunos").innerHTML += "<li>"+alunos[i]+"</li>";
+            document.getElementById("listadealunos").innerHTML += `<li>${alunos[i]}</li>`;
+            // 2 possibilidades de mostrar o valor
+            // += pega o valor já impresso e coloca um novo
+        }
+        //while
+        let i=0;
+        while(i<10){
+            console.log(i);
+            i++; //não esquecer do incremento. caso contrário, trava tudo
+        }
+      </script>
+      <h2>EXEMPLOS</h2>
+      <p id="resultado"></p>
+      <script>
+        const resultado = document.getElementById("resultado");
+        for(let i=0 ; i < 5 ; i++){
+            resultado.innerHTML += `<span style='font-size:${i}rem'>INFOWEB</span> <br>` 
+        }
+      </script>
+
+      <button id="mudarbg">MUDAR BG</button>
+
+      <script>
+
+        const mudarbg = document.getElementById("mudarbg");
+        mudarbg.addEventListener("click", function (e){
+            document.body.style.backgroundColor = "blue";
+        })
+      </script>
+      <!-- 
+       na linha 63 foi usado um css inline, isto é, dentro da tag html na linha 76 fooi usado um css como propriedade do js, o backgroundcolor -->
+</body>
+</html>
