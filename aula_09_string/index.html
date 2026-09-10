@@ -23,7 +23,45 @@
         console.log("Fatia a string"+nome.slice(2,4))
         //slice recebe dois parâmetros: posição incial e a posião final (a final não é impressa)
         console.log("Coloca em minúsculas: "+nome.toLowerCase());
-        console.log("Coloca em maiúsculas: "+"ifrn".toUpperCase())
+        console.log("Coloca em maiúsculas: "+"ifrn".toUpperCase());
+        console.log("Concatena strings: "+nome.concat(" IFRN"));
     </script>
+    <h2>EXEMPLO</h2>
+    <p id="resultado"></p>
+    <script>
+        let nome2 = 'DESIGN WEB';
+        for(let i=0; i<=nome2.length; i++){
+            document.getElementById('resultado').innerHTML += 
+            '<span style=font-size:'+(i+1)+'rem>'+
+            nome2.charAt(i)
+        }
+    </script>
+    <h2>DATA</h2>
+    <p id="data"></p>
+    <p id="segundos"></p>
+    <script>
+        const data = new Date();
+        //data baseada na data que está no computador do usuário
+
+        console.log("Dia de hoje: "+data.getDate());
+        console.log("Mês atual: "+data.getMonth()); //o mês começa com 0. ou seja, janeiro seria o mês 0 e iríamos até o mês 11
+        console.log("Ano corrente: "+ data.getFullYear());
+
+        document.getElementById("data").innerHTML = data.getDate() +"/"+ data.getMonth() +"/"+ data.getFullYear()
+        
+        console.log("Hora: "+data.getHours());
+        console.log("Minutos: "+data.getMinutes());
+        console.log("Segundos: "+data.getSeconds());
+
+        function segundos(){
+            const segundos = new Date();
+            document.getElementById('segundos').innerHTML = segundos.getSeconds(); 
+        }
+        setInterval(segundos, 1000)
+        // setinterval é uma função de timer. o primeiro parâmetro recebe o nome da função (sem parênteses)
+        //o segundo parâmetro recebe o tempo em milissegundos
+
+    </script>
+
 </body>
 </html>
