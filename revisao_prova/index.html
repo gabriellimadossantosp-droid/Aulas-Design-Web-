@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REvisÃO</title>
+</head>
+<body>
+    <h1>Diretoria de Extensão - DIREX</h1>
+    <h2>Cadastro para Estágio</h2>
+    <form action="resposta.html" method="get">
+        <!-- ao usar o método get, os dados vão ser passados de forma escondida -->
+        <label for="nome">Nome: </label>
+        <!-- a marcação de label representa o rótulo no formulário, ou seja, como vai aparecer -->
+        <input type="text" id="nome" name="nome" value="Pedro"> <br>
+         <!-- tipo de dado de que ser colocado, id do respectivo dado, nome dado a ele -->
+          <!-- o value é usado para a edição de dados, ficando pre-definido e disponível para que o usuário modifique -->
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" name="email" placeholder="Digite aqui seu email"> <br>
+        <!-- placeholder serve para deixar uma mensagem indicando o que deve ser dito dentro da área do input-->
+        <label for="nascimento">Nascimento: </label>
+        <input type="date" id="nascimento"> <br>
+         <!-- date deixa um calendário para que o usuário possa escolher a data -->
+          <!-- não escrevi aqui, mas existe uma tag de disable, que desabilita e deixa inutilizável aquela marcação onde ela se encontra -->
+        <label for="arquivo">Arquivo: </label>
+        <input type="file" id="arquivo" required> <br>
+        <label for="senha">Senha: </label>
+        <input type="password" id="senha" maxlength="10" minlength="5"> <br>
+        <!-- maxlength e minlength definem o número máximo e mínimo de caracteres -->
+
+        <p>Qual a sua área? <br>
+         <label>
+            <input type="checkbox" name="area" id="design" value="design">
+            Design
+         </label> <br>
+         <label>
+            <input type="checkbox" name="area" id="prog" value="prog">
+            Programação
+         </label> <br>
+         <label>
+            <input type="checkbox" name="area" id="redes" value="redes">
+            Redes
+         </label> <br>
+         </p>
+         <p>
+            Qual seu curso? <br>
+            <label>
+                <input type="radio" name="curso" value="infoweb">
+                Infoweb
+            </label> <br>
+            <label>
+                <input type="radio" name="curso" value="adm">
+                Administração
+            </label> <br>
+            <label>
+                <input type="radio" name="curso" value="msi">
+                Manutenção e Suporte em Informática
+            </label> <br>
+         </p>
+         <!-- radio e checkbox tem funções e valores semelhantes, com ambos sendo usados como uma forma de formulário e recebendo name e value -->
+          <!-- checkbox permite selecionar várias opções, radio permite selecionar apenas uma -->
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+</html>
