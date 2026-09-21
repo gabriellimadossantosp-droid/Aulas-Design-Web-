@@ -3,63 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REvisÃO</title>
+    <title>Tarefa</title>
 </head>
 <body>
-    <h1>Diretoria de Extensão - DIREX</h1>
-    <h2>Cadastro para Estágio</h2>
-    <form action="resposta.html" method="get">
-        <!-- ao usar o método get, os dados vão ser passados de forma escondida -->
-        <label for="nome">Nome: </label>
-        <!-- a marcação de label representa o rótulo no formulário, ou seja, como vai aparecer -->
-        <input type="text" id="nome" name="nome" value="Pedro"> <br>
-         <!-- tipo de dado de que ser colocado, id do respectivo dado, nome dado a ele -->
-          <!-- o value é usado para a edição de dados, ficando pre-definido e disponível para que o usuário modifique -->
-        <label for="email">E-mail: </label>
-        <input type="email" id="email" name="email" placeholder="Digite aqui seu email"> <br>
-        <!-- placeholder serve para deixar uma mensagem indicando o que deve ser dito dentro da área do input-->
-        <label for="nascimento">Nascimento: </label>
-        <input type="date" id="nascimento"> <br>
-         <!-- date deixa um calendário para que o usuário possa escolher a data -->
-          <!-- não escrevi aqui, mas existe uma tag de disable, que desabilita e deixa inutilizável aquela marcação onde ela se encontra -->
-        <label for="arquivo">Arquivo: </label>
-        <input type="file" id="arquivo" required> <br>
-        <label for="senha">Senha: </label>
-        <input type="password" id="senha" maxlength="10" minlength="5"> <br>
-        <!-- maxlength e minlength definem o número máximo e mínimo de caracteres -->
+    <p id="q1"></p>
+    <script>
+        const q1 = document.getElementById("q1")
+        for(let i = -10; i <= 10; i++){
+            q1.innerHTML += '<span> '+ i +' </span><br>'
+        }
 
-        <p>Qual a sua área? <br>
-         <label>
-            <input type="checkbox" name="area" id="design" value="design">
-            Design
-         </label> <br>
-         <label>
-            <input type="checkbox" name="area" id="prog" value="prog">
-            Programação
-         </label> <br>
-         <label>
-            <input type="checkbox" name="area" id="redes" value="redes">
-            Redes
-         </label> <br>
-         </p>
-         <p>
-            Qual seu curso? <br>
-            <label>
-                <input type="radio" name="curso" value="infoweb">
-                Infoweb
-            </label> <br>
-            <label>
-                <input type="radio" name="curso" value="adm">
-                Administração
-            </label> <br>
-            <label>
-                <input type="radio" name="curso" value="msi">
-                Manutenção e Suporte em Informática
-            </label> <br>
-         </p>
-         <!-- radio e checkbox tem funções e valores semelhantes, com ambos sendo usados como uma forma de formulário e recebendo name e value -->
-          <!-- checkbox permite selecionar várias opções, radio permite selecionar apenas uma -->
-        <input type="submit" value="ENVIAR">
-    </form>
+        </script>
+
+    <label>Nome:
+        <input type="text" id="nome">
+        <button type="button" id="mostrar">mostrar</button>
+    </label>
+    <p id="q2"></p>
+    <p id="q3"></p>
+    <script>
+        const mostrar = document.getElementById("mostrar");
+        mostrar.addEventListener("click", function(e){
+            let colors = ['blue', 'red', 'purple', 'green', 'black', 'orange', 'pink']
+            let nome = document.getElementById("nome").value;
+            const q3 = document.getElementById("q3");
+            const q2 = document.getElementById("q2");
+
+            for(let i = 0; i < colors.length; i++){
+                q2.innerHTML += '<span style="color:' + colors[i]+ ';"> '+ nome +' </span>';
+                // q2.innerHTML += `<span style="color:${colors[i]};"> ${nome} </span><br>`;
+                // $[] - funciona apenas com crase e '' + '' funciona com as aspas
+            }
+
+            for(let i = 1; i <= 5; i++){
+                q3.innerHTML += `<span style="font-size:${i}rem;"> ${nome} </span>`;
+            }          
+        })
+        </script>
+        <button id="aumentar">aumentar</button>
+        <button id="normal">normal</button>
+        <button id="diminuir">diminuir</button>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam optio ab sint nemo molestias earum praesentium, provident vitae qui magnam beatae consequatur rerum, itaque deserunt inventore atque hic sapiente laborum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam optio ab sint nemo molestias earum praesentium, provident vitae qui magnam beatae consequatur rerum, itaque deserunt inventore atque hic sapiente laborum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam optio ab sint nemo molestias earum praesentium, provident vitae qui magnam beatae consequatur rerum, itaque deserunt inventore atque hic sapiente laborum.</p>
+
+        <script>
+            const aumentar = document.getElementById("aumentar")
+            const diminuir = document.getElementById("diminuir")
+            const normal = document.getElementById("normal")
+            let corpo = document.body
+            let n = 1
+            aumentar.addEventListener("click", function(e){
+                corpo.style.fontSize = n*2 + "rem";
+            })
+            diminuir.addEventListener("click", function(e){
+                corpo.style.fontSize = n/2 + "rem";
+            })
+            normal.addEventListener("click", function(e){
+                corpo.style.fontSize = n + "rem";
+            })
+
+        </script>
+
 </body>
 </html>
