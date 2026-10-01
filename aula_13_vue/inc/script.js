@@ -31,17 +31,11 @@ const lancheifrn = createApp({
             }
         ])
 
-        const frutaifrn = createApp({
-            setup(){
-
-                const frutaifrn = localStorage.getItem("frutas")
-            }
-        })
-
 
         watch(lanches, () => {
             localStorage.setItem('lanches', JSON.stringify(lanches.value))
         }, {deep: true, immediate: true})
+
         //função watch - observa a lista: qualquer alteração é feita também no banco de dados que fica no localstrorage
         // stringfy - esse método precisa ser usado porque o localstorage só recebe string e ele converte objeto para string
         //deff: true - profundo... ele observa até os valores das propriedades do objeto
@@ -69,9 +63,73 @@ const lancheifrn = createApp({
         }
     }
 })
+
+const frutaifrn = createApp({
+    setup(){
+
+        const frutaifrnLS = localStorage.getItem("frutas");
+        //criou uma variável que representa a tabela do banco de dados do navegador da nossa aplicação
+
+        // a variável teve que ficar dentro do setup porque ela precisava mudar os valores
+        //isto é, ser dinâmica, não apenas acessar seus dados, mas também alterar os dados.
+        const frutas = ref(
+            frutaifrnLS ? JSON.parse(frutaifrnLS):
+            // ? é a mesma coisa que um if
+            [
+            //lista de objetos
+            {
+                descricao: 'Banana',
+                ativo: true,
+                imagem: 'banana.jpg'
+            },
+            {
+                descricao: 'Melancia',
+                ativo: false,
+                imagem: 'melancia.jpg'
+            },
+            {
+                descricao: 'Tangerina',
+                ativo: false,
+                imagem: 'tangerina.jpg'
+            }
+        ])
+
+
+        watch(frutas, () => {
+            localStorage.setItem('frutas', JSON.stringify(frutas.value))
+        }, {deep: true, immediate: true})
+
+        //função watch - observa a lista: qualquer alteração é feita também no banco de dados que fica no localstrorage
+        // stringfy - esse método precisa ser usado porque o localstorage só recebe string e ele converte objeto para string
+        //deff: true - profundo... ele observa até os valores das propriedades do objeto
+        // se houver alteração no valor, por exemplo do 'ativo', este é atualizado no localstorage
+        // immediate: true - coloca os valores, os objetos, na tabela do localstudio imediatamente ao abrir a aplicação
+
+        function mudarAtivo(item){
+            frutas.value.forEach(fruta => {
+                fruta.ativo = false
+            }) //vou colocar false em todos
+            item.ativo = !item.ativo
+        }
+
+        const novaFrutaInput = ref('')
+        function novaFruta(){
+            console.log('Entrou na função!'+ novaFrutaInput.value)
+        }
+
+        return{
+            mensagem: ref("Olá, Mundo!!"), //é o getElementById            
+            frutas,
+            mudarAtivo,
+            novaFrutaInput,
+            novaFruta
+        }
+    }
+})
 lancheifrn.component('app-header', AppHeader); //CHAMAR O ARQUIVO JS DO HEADER
 lancheifrn.component('app-footer', AppFooter); //CHAMAR O ARQUIVO JS DO HEADER
 lancheifrn.mount('#app');
+
 
 /*
 Para definir o localstorage (banco de dados dentro do navegador):

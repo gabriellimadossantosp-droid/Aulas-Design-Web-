@@ -31,6 +31,12 @@
                 <button @click="novaFruta()" class="add"></button>
             </fieldset>
 
+            <ol>
+                <li class="fruta" v-for="fruta in frutas">
+                    {{ fruta.descricao }}
+                </li>
+            </ol>
+
         </main>
         
         <app-footer></app-footer>
