@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,8 @@
             
             <fieldset class="adicionar">
                 <legend>Inserir lanche</legend>
-                <input type="text" placeholder="Novo lanche...">
-                <button class="add">INSERIR</button>
+                <input type="text" placeholder="Novo lanche..." v-model="novoLancheInput">
+                <button @click="novoLanche()" class="add">INSERIR</button>
 
             </fieldset>
 
@@ -25,7 +25,11 @@
                 </li>
             </ol>
 
-
+            <fieldset class="adicionar">
+                <legend>Inserir fruta</legend>
+                <input type="text" placeholder="Nova fruta..." v-model="novaFrutaInput">
+                <button @click="novaFruta()" class="add"></button>
+            </fieldset>
 
         </main>
         
