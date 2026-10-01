@@ -27,7 +27,7 @@
                 <img :src="'imagens/'+lanche.imagem" width="50" alt="">
             </li>
         </ol>
-        <ol>
+         <ol>
             <li v-for="fruta in frutas"
                     class="fruta"
                     :class="{selecionado: fruta.ativo}"
@@ -40,8 +40,6 @@
                 <img :src="'imagens/'+lanche.imagem" width="50" alt="">
             </li>
         </ol>
-
-
         </main>
         <app-footer></app-footer>
     </div>
