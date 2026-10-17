@@ -1,0 +1,76 @@
+body {
+    background-color: aliceblue;
+    color: rgb(40, 38, 38);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #dede1df7;
+    color: rgb(40, 38, 38); /* Ajustado para escuro para melhorar a leitura */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h1 a, header a {
+    text-decoration: none;
+    color: rgb(40, 38, 38); /* Ajustado para escuro */
+}
+
+header h1 a:hover {
+    color: #0284c7;
+}
+
+nav {
+    background-color: #c2c3b4;
+}
+
+nav ol, nav ul, .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav ol li, nav ul li, .menu li {
+    margin: 0;
+}
+
+nav ol li a, nav ul li a, .menu a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 500;
+}
+
+nav ol li a:hover, nav ul li a:hover, .menu a:hover {
+    background-color: #5d5d47;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.sorvete-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sorvetes-card {
+    height: auto;
+}
