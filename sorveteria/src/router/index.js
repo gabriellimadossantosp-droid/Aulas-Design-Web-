@@ -1,13 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SorvetesView from '@/views/SorvetesView.vue'
 import ContatoView from '@/views/ContatoView.vue'
+import NoticiasView from '@/views/NoticiasView.vue'
+import HomeView from '@/views/HomeView.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: SorvetesView // Aponta a raiz para a tela de sorvetes
-  },
   {
     path: '/sorvetes',
     name: 'Sorvetes',
@@ -17,6 +14,16 @@ const routes = [
     path: '/contato',
     name: 'Contato',
     component: ContatoView
+  },
+  {
+    path: '/noticias',
+    name: 'Noticias',
+    component: NoticiasView
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: HomeView
   }
 ]
 

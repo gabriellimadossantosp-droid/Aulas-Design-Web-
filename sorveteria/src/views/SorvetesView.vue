@@ -17,7 +17,6 @@ export default {
   name: 'SorvetesView'
 }
 </script>
-
 <style scoped>
 .home-container {
   text-align: center;
@@ -34,3 +33,4 @@ export default {
   margin-right: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+</style>

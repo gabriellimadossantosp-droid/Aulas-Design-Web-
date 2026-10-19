@@ -8,8 +8,8 @@ body {
 header {
     text-align: center;
     padding: 30px 20px;
-    background-color: #dede1df7;
-    color: rgb(40, 38, 38); /* Ajustado para escuro para melhorar a leitura */
+    background-color: #f8f40a;
+    color: rgb(75, 75, 45); /* Ajustado para escuro para melhorar a leitura */
 }
 
 header h1 {
@@ -27,7 +27,7 @@ header h1 a:hover {
 }
 
 nav {
-    background-color: #c2c3b4;
+    background-color: #83856f;
 }
 
 nav ol, nav ul, .menu {
