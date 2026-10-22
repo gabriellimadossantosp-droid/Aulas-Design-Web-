@@ -5,6 +5,11 @@ import NoticiasView from '@/views/NoticiasView.vue'
 import HomeView from '@/views/HomeView.vue'
 
 const routes = [
+    {
+    path: '/',
+    name: 'Home',
+    component: HomeView
+  },
   {
     path: '/sorvetes',
     name: 'Sorvetes',
@@ -19,11 +24,6 @@ const routes = [
     path: '/noticias',
     name: 'Noticias',
     component: NoticiasView
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: HomeView
   }
 ]
 
@@ -33,3 +33,5 @@ const router = createRouter({
 })
 
 export default router
+
+// o nome dessa pasta onde esse arquivo se e

@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
     <HeaderSection />
     <router-view />
-  </div>
 </template>
 
 <script>
