@@ -21,16 +21,19 @@ onMounted(buscarPersonagens);
 </script>
 
 <template>
-    <h2>Rick and Morty</h2>
-    <div>
-    <CardPadrao v-for="item in personagens"
-        :key="item.id"
-        :name="item.name"
-    />
-    </div>
+    <h2>rickandmortyapi</h2>
+    <section>
+        <CardPadrao v-for="item in personagens"
+            :key="item.id"
+            :titulo="item.name"
+            :subtitulo="item.species"
+            :imagem="item.image"
+            :url="item.location.url"
+        />
+    </section>
 </template>
 <style scoped>
-    div{
+    section{
         display: flex;
         flex-wrap: wrap;
     }
